@@ -11,7 +11,7 @@ const InventoryGrid: React.FC<{ inventory: Inventory, direction: 'left' | 'right
     () => (inventory.maxWeight !== undefined ? Math.floor(getTotalWeight(inventory.items)*1000)/1000 : 0),
     [inventory.maxWeight, inventory.items]
   );
-  const hotInv = inventory.items.slice(0,5)
+
   return (
     <>
       <div className="inventory-grid-wrapper">
@@ -20,7 +20,7 @@ const InventoryGrid: React.FC<{ inventory: Inventory, direction: 'left' | 'right
             <p>{inventory.label}</p>
             {inventory.maxWeight && (
               <p>
-                {weight / 100}/{inventory.maxWeight / 100}
+                {weight / 1000}/{inventory.maxWeight / 1000}kg
               </p>
             )}
           </div>

@@ -14,8 +14,6 @@ $gridSize: 10.2vh;
 $gridGap: 0.5rem;
 
 $containerSize: calc(#{$gridRows} * #{$gridSize + 0.22vh} + #{$gridRows} * #{$gridGap});
-$containerSize-right: calc(#{$gridRows-right} * #{$gridSize + 0.22vh} + #{$gridRows-right} * #{$gridGap});
-
 
 body {
   margin: 0;
@@ -28,7 +26,6 @@ body {
   overflow: hidden !important;
   user-select: none;
 }
-
 
 .hotslot-wrapper {
   display: grid;
@@ -79,7 +76,6 @@ input[type='number']::-webkit-outer-spin-button {
   -moz-appearance: none;
   appearance: none;
 }
-
 
 .MuiMenuItem-root > div > p {
   padding: 0 !important;
@@ -153,6 +149,14 @@ button:active {
   width: 4rem;
   margin-right: 1rem;
 
+  .inventory-control-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
   .inventory-control-input {
     transition: 200ms;
     padding: 16px 8px;
@@ -169,6 +173,23 @@ button:active {
       background-color: #191920;
     }
     width: 100%;
+  }
+
+  .inventory-control-button {
+    font-size: 14px;
+    color: #fff;
+    background-color: $seconaryColor;
+    transition: 200ms;
+    padding: 12px 8px;
+    border-radius: 2.5%;
+    border: none;
+    text-transform: uppercase;
+    font-family: $mainFont;
+    width: 100%;
+    font-weight: 500;
+    &:hover {
+      background-color: $secondaryColorDark;
+    }
   }
 }
 
@@ -288,7 +309,7 @@ button:active {
 .inventory-slot-number {
   position: absolute;
   color: rgb(245, 245, 245);
-  font-size: 8vh;
+  font-size: 1vh;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -299,7 +320,6 @@ button:active {
   text-align: center;
   font-family: Poppins;
 }
-
 
 .item-slot-wrapper {
   display: flex;
@@ -324,6 +344,11 @@ button:active {
 .item-slot-header-wrapper {
   display: flex;
   flex-direction: row;
+}
+
+.item-hotslot-header-wrapper {
+  @extend .item-slot-header-wrapper;
+  justify-content: space-between !important;
 }
 
 .item-slot-info-wrapper {
@@ -501,3 +526,4 @@ button:active {
   overflow: hidden;
   margin-top: 0.5rem;
 }
+

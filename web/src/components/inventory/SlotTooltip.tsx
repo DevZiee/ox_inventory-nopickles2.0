@@ -5,8 +5,8 @@ import { Items } from '../../store/items';
 import { Locale } from '../../store/locale';
 import ReactMarkdown from 'react-markdown';
 import { useAppSelector } from '../../store';
-import { getItemUrl } from '../../helpers';
 import ClockIcon from '../utils/icons/ClockIcon';
+import { getItemUrl } from '../../helpers';
 
 const SlotTooltip: React.FC<{ item: SlotWithItem; inventory: Inventory }> = ({ item, inventory }) => {
   const additionalMetadata = useAppSelector((state) => state.inventory.additionalMetadata);
